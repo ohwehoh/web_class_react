@@ -1,18 +1,19 @@
 import React from 'react';
 import Header from "../includes/Header";
 import Contents from "../includes/Contents";
+import PortCont from "../includes/PortCont";
 import Footer from "../includes/Footer"
+import ContactCont from '../includes/ContactCont';
+import ContTitle from '../includes/ContTitle';
 
 function Portfolio(){
     return (
         <>
         <Header />
         <Contents>
-            <section className="portfolio__cont">
-                <div className="portfolio__inner">
-                    <div>portfolio</div>
-                </div>
-            </section>
+            <ContTitle title={["portfolio","site"]}/>
+            <PortCont />
+            <ContactCont/> 
         </Contents>
         <Footer />
     </>

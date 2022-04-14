@@ -3,22 +3,20 @@
     left: 0;
     top: 0;
     width: 100%;
-    color: #fff;
+    color: var(--white);
     border-bottom: 1px solid var(--dark_border);
     background-color: var(--dark_bg);
     display: flex;
     align-items: center;
-    font-family: "Rajdhani";
-    // padding: 1em;
+    font-family: var(--sub_font);
 }
 .header__port {
-    flex: 1 1 30%;
+    flex: 1 1 40%;
     a {
         display: inline-block;
         padding: 1rem;
         text-transform: capitalize;
         position: relative;
-
         &::before {
             content: '';
             position: absolute;
@@ -36,7 +34,7 @@
     }
 }
 .header__logo {
-    flex: 1 1 40%;
+    flex: 1 1 20%;
     text-align: center;
     a {
         display: inline-block;
@@ -45,17 +43,14 @@
     }
 }
 .header__menu {
-    flex: 1 1 30%;
+    flex: 1 1 40%;
     text-align: right;
-
     li {
         display: inline;
-
         a {
             display: inline-block;
             padding: 1rem;
             position: relative;
-
             &::before {
                 content: '';
                 position: absolute;
@@ -73,17 +68,31 @@
         }
     }
 }
-
 // 라이트 버전
-#header.light {
+.light#header {
     background-color: var(--light_bg);
-    border-color: 1px solid var(--light_border);
-
+    border-color: var(--light_border);
     a {
         color: var(--black);
-
         &::before {
-            background:var(--black);
+            background: var(--black);
         }
+    }
+}
+// 미디어 쿼리
+@media (max-width: 1030px){
+    .header__menu {
+        display: none;
+    }
+    .header__port {
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    #header {
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+        border-bottom-color: #c2c2c249;
     }
 }

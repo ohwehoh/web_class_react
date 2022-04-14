@@ -1,7 +1,7 @@
 import React from "react";
 
-function Contents({children}){
-    return <main id="main">{children}</main>
+function Contents({children, color}){
+    return <main id="main" className={color}>{children}</main>
 }
 
 export default Contents;

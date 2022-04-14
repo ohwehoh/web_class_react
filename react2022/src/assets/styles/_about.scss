@@ -1,0 +1,71 @@
+//about__cont
+.about__cont {
+    padding-top: 6vw;
+    padding-bottom: 20vh;
+    color: var(--black);
+    font-family: "Chosunilbo";
+}
+.about__inner {}
+.about__item1 {
+    .text {
+        h3 {
+            font-size: 18px;
+            margin-top: 5vw;
+            margin-bottom: 1.5vw;
+        }
+        p {
+            font-size: 18px;
+            width: 70%;
+        }
+    }
+}
+
+.about__item2 {
+    margin-top: 15vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .img {
+        flex: 1 1 68%;
+        margin-right: 2%;
+    }
+    .text {
+        flex: 1 1 28%;
+        margin-left: 2%;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 1.5vw;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+.about__item3 {
+    margin-top: 15vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .img {
+        flex: 1 1 68%;
+        margin-left: 2%;
+    }
+    .text {
+        flex: 1 1 28%;
+        margin-right: 2%;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 1.5vw;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+}

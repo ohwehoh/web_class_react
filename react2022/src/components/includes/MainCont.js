@@ -1,13 +1,25 @@
 import React from "react";
 
+//함수형 컨퍼넌트 ++클래스 컨퍼넌트-->리액트 훅
+
+function MainInfo({text}){
+    return <div>{text}</div>
+}
+
+const mainText = [
+    {text : "WE PROVIDE"},
+    {text : "VISUAL CODING"},
+    {text : "SOLUTIONS"},
+    {text : "FOR YOU WEBS"}
+]
+
 function MainCont(){
     return(
         <section className="main__cont">
             <div className="main__inner">
-                <div>WE PROVIDE</div>
-                <div>VISUAL CODING</div>
-                <div>SOLUTIONS</div>
-                <div>FOR YOU WEBS</div>
+                    {mainText.map((txt) => (
+                        <MainInfo text={txt.text} key={txt.text}/>
+                    ))}
             </div>
         </section>
     )
