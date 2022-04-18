@@ -1,0 +1,29 @@
+.refer__cont {
+    font-family: var(--subKor_font);
+    // background-color: var(--black);
+    min-height: 100vh;
+    padding-bottom: 20vw;
+}
+.refer__inner {
+    h2 {
+        color: var(--black);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    table {
+        border-top: 1px solid var(--black);
+        border-bottom: 2px solid var(--black);
+        color: var(--black);
+
+        thead {
+            display: none;
+        }
+
+        td {
+            border-top: 1px solid var(--black);
+            padding: 1.4rem 0;
+            font-family: var(--subKor_font);
+            font-weight: 300;
+        }
+    }
+}

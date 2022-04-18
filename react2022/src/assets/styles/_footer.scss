@@ -79,9 +79,9 @@
     }
 }
 
-#footer.light {
+.light#footer {
     background-color: var(--light_bg);
-    border-top-color: 1px solid var(--light_border);
+    border-top-color: var(--light_border);
 
     h4 {
         color: var(--black);

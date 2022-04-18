@@ -1,20 +1,21 @@
 import React from 'react';
-import Header from "../includes/Header";
-import Contents from "../includes/Contents";
-import Footer from "../includes/Footer"
+import Header from "../layout/Header";
+import Contents from "../layout/Contents";
+import ContTitle from '../layout/ContTitle';
+import ReferenceCont from '../includes/ReferenceCont';
+import Contact from '../layout/Contact';
+import Footer from "../layout/Footer";
 
 function Reference(){
     return (
         <>
-            <Header />
-            <Contents>
-                <section className="reference__cont">
-                    <div className="reference__inner">
-                        <div>reference</div>
-                    </div>
-                </section>
+            <Header color="light"/>
+            <Contents color="light">
+                <ContTitle title={["reference","book"]} color="light"/>
+                <ReferenceCont />
             </Contents>
-            <Footer />
+            <Contact/>
+            <Footer color="light"/>
         </>
     )
 }

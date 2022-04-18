@@ -3,9 +3,9 @@
     padding-top: 6vw;
     padding-bottom: 20vh;
     color: var(--black);
-    font-family: "Chosunilbo";
+    font-family: var(--kor_font);
 }
-.about__inner {}
+
 .about__item1 {
     .text {
         h3 {
@@ -51,13 +51,14 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
 
     .img {
-        flex: 1 1 68%;
+        flex: 1 1 60%;
         margin-left: 2%;
     }
     .text {
-        flex: 1 1 28%;
+        flex: 1 1 34%;
         margin-right: 2%;
 
         h3 {
@@ -66,6 +67,39 @@
         }
         p {
             font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .about__item1,
+    .about__item2,
+    .about__item3 {
+        padding: 2%;
+    }
+}
+@media (max-width: 960px){
+    .about__inner {
+        .about__item1,
+        .about__item2,
+        .about__item3 {
+            flex-direction: column;
+            padding-bottom: 5vh;
+
+            .img {
+                margin-right: 0%;
+                margin-left: 0%;
+            }
+            .text {
+                margin-left: 0%;
+                margin-right: 0%;
+                p {
+                    width: 100%;
+                }
+            }
+        }
+        h3 {
+            margin-top: 30px;
         }
     }
 }

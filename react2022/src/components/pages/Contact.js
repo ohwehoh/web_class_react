@@ -1,14 +1,18 @@
 import React from 'react';
-import Contents from "../includes/Contents";
-import ContactCont from '../includes/ContactCont';
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
+import Contents from "../layout/Contents";
+import ContactCont from "../includes/ContactCont";
 
 function Contact(){
     return (
         <>
-        <Contents color="black">
+        <Header />
+        <Contents>
             <ContactCont />
         </Contents>
-    </>
+        <Footer />
+        </>
     )
 }
 export default Contact;
