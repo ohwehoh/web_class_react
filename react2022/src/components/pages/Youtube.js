@@ -9,13 +9,13 @@ import Contact from '../layout/Contact';
 function Youtube(){
     return (
         <>
-            <Header />
-            <Contents>
-                <ContTitle title={["coding","youtuber"]}/>
+            <Header color="light"/>
+            <Contents color="light">
+                <ContTitle title={["coding","youtuber"]} color="light"/>
                 <YoutubeCont />
             </Contents>
             <Contact />
-            <Footer />
+            <Footer color="light"/>
 
         </>
     )
