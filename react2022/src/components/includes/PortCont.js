@@ -2,11 +2,11 @@ import React from "react";
 
 //함수형 컨퍼넌트 ++클래스 컨퍼넌트-->리액트 훅
 
-function PortInfo({image, title, category}){
+function PortInfo({image, title, category, link, id}){
     return (
         <article className="port__item">
             <figure className="img">
-                <a href="/"><img src={image} alt="port1" /></a>
+                <a href={link}><img src={image} alt={`port0${id}`} /></a>
             </figure>
             <div className="text">
                 <h3>{title}</h3>
@@ -44,10 +44,12 @@ function PortCont({port}){
                 <div className="port__inner">
                     {port.map((txt) => (
                         <PortInfo
-                            key = {txt.title}
+                            key = {txt.id}
                             image = {txt.image}
                             title = {txt.title}
                             category = {txt.category}
+                            link = {txt.link}
+                            id = {txt.id}
                         />
                     ))}
                 </div>
