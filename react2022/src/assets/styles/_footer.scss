@@ -9,6 +9,7 @@
     background-color: var(--dark_bg);
     align-items: center;
     font-family: "Rajdhani";
+    z-index: 1000;
     div {
         text-align: center;
         padding: 1.45rem;
@@ -111,4 +112,9 @@
         div:nth-child(3) { display: none;}
 
     }
+}
+
+//푸터 애니메이션
+#footer {
+    bottom: -100%;
 }
