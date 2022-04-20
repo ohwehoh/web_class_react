@@ -4,6 +4,8 @@
     padding-bottom: 20vh;
     color: var(--black);
     font-family: var(--kor_font);
+    opacity: 0;
+    transform: translateY(100px);
 }
 
 .about__item1 {

@@ -81,11 +81,12 @@ class Portfolio extends React.Component {
     }
 
     componentDidMount(){
+        document.querySelector("body").style.background = "#000";
         setTimeout(() => {
             console.log("첫번째 시작");
             document.getElementById("loading").classList.remove("loading__active");
             this.getPorts();
-        }, 2000)
+        }, 3000)
     }
 
     render(){
@@ -95,7 +96,7 @@ class Portfolio extends React.Component {
         return (
             <>
                 {isLoading ? (
-                    <Loading />
+                    <Loading color="black"/>
                 ) : (
                     <>
                         <Header />

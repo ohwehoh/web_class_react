@@ -1,5 +1,13 @@
-body {
-    background: #000;
+#loading.black {
+    background: var(--black);
+}
+
+#loading.light {
+    background: var(--light_bg);
+
+    .loading__text span {
+        color: var(--black);
+    }
 }
 
 #loading.loading__active {

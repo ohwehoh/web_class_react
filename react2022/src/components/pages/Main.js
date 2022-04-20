@@ -24,9 +24,9 @@ class Main extends React.Component {
         isLoading: true
     }
 
-    mainAnimation = () => {
-        gsap.set(".main__inner", {opacity: 0})
-    }
+    // mainAnimation = () => {
+    //     gsap.set(".main__inner", {opacity: 0})
+    // }
 
     getSite = () => {
         setTimeout(()=>{
@@ -71,11 +71,16 @@ class Main extends React.Component {
     }
 
     componentDidMount(){
+        document.querySelector("body").style.background = "#000";
+        setTimeout(() => {
+            document.getElementById("loading").classList.remove("loading__active");
+            // this.setState({isLoading:false});
+            // this.mainAnimation();...로딩이 다 안돼서 .main__inner를 불러오지 못한다.
+        }, 3000)
         setTimeout(() => {
             this.setState({isLoading:false});
-            // this.mainAnimation();...로딩이 다 안돼서 .main__inner를 불러오지 못한다.
             this.getSite();
-        }, 3000)
+        }, 4000)
     }
 
     render(){
@@ -84,7 +89,7 @@ class Main extends React.Component {
         return (
             <>
                 {isLoading ? (
-                    <Loading />
+                    <Loading color="black"/>
                 ) : (
                     <>
                         <Header />

@@ -1,6 +1,8 @@
 .script__inner {
     font-family: var(--kor_font);
     color: #030406;
+    opacity: 0;
+    transform: translateY(100px);
 
     article {
         padding-bottom: 190px;

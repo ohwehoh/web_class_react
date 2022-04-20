@@ -3,6 +3,8 @@
     // background-color: var(--black);
     min-height: 100vh;
     padding-bottom: 20vw;
+    opacity: 0;
+    transform: translateY(100px);
 }
 .refer__inner {
     h2 {
