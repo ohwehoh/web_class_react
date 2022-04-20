@@ -7,6 +7,7 @@ import Contact from '../layout/Contact';
 import Footer from "../layout/Footer";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
+import axios from 'axios';
 
 
 // function Reference(){
@@ -25,15 +26,12 @@ import { gsap } from "gsap";
 
 class Reference extends React.Component{
     state = {
-        isLoading: true
+        isLoading: true,
+        refers: []
     }
 
     mainAnimation = () => {
-        gsap.set(".main__inner", {opacity: 0})
-    }
-
-    getSite = () => {
-        setTimeout(()=>{
+        setTimeout(() => {
             gsap.to("#header", {
                 duration: 0.8,
                 top: 0,
@@ -41,49 +39,68 @@ class Reference extends React.Component{
             gsap.to("#footer", {
                 duration: 0.8,
                 bottom: 0,
-                delay: 0.4
+                delay: 0.2,
             });
             gsap.to(".cont__title strong", {
-                duration: 0.5,
-                x: 0,
+                duration: 0.7,
                 y: 0,
                 opacity: 1,
-                delay: 1,
-                ease: "sine.out"
+                delay: 1.0,
+                ease: "power4.out"
             });
             gsap.to(".cont__title em", {
-                duration: 0.5,
-                x: 0,
+                duration: 0.7,
                 y: 0,
                 opacity: 1,
                 delay: 1.3,
-                ease: "sine.out"
+                ease: "power4.out"
             });
             gsap.to(".refer__cont", {
-                duration: 0.6,
-                opacity: 1,
+                duration: 0.7,
                 y: 0,
-                delay: 1.6,
-                ease: "slow(0.7, 0.7, false)"
+                opacity: 1,
+                delay: 1.5,
+                ease: "power4.out"
             });
-        }, 500)
+        }, 10)
     }
+
+    getSite = async () => {
+        const {
+            data: {
+                data: {refer},
+            },
+        } = await axios.get("https://ohwehoh.github.io/web_class_react/react2022/src/assets/json/reference.json");
+
+        this.setState({refers:refer, isLoading:false});
+        this.mainAnimation();
+        console.log(refer);
+    }
+
+    // componentDidMount(){
+    //     setTimeout(() => {
+    //         document.getElementById("loading").classList.remove("loading__active");
+    //         document.querySelector("body").style.background = "#f0eeeb";
+    //     }, 1000)
+        
+    //     setTimeout(() => {
+    //         // this.mainAnimation();...로딩이 다 안돼서 .main__inner를 불러오지 못한다.
+    //         this.getSite();
+    //     }, 3000)
+    // }
 
     componentDidMount(){
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
-            document.querySelector("body").style.background = "#f0eeeb";
-        }, 1000)
-        
-        setTimeout(() => {
-            this.setState({isLoading:false});
-            // this.mainAnimation();...로딩이 다 안돼서 .main__inner를 불러오지 못한다.
+            document.querySelector("body").style.background = "#F0EEEB";
             this.getSite();
-        }, 3000)
+        }, 2000);
     }
 
     render(){
-        const {isLoading} = this.state;
+        const {isLoading, refers} = this.state;
+        console.log("1" + isLoading);
+        console.log(refers);
         return (
             <>
                 {isLoading ? (
@@ -93,7 +110,7 @@ class Reference extends React.Component{
                         <Header color="light"/>
                         <Contents color="light">
                             <ContTitle title={["reference","book"]} color="light"/>
-                            <ReferenceCont />
+                            <ReferenceCont refer={refers} />
                         </Contents>
                         <Contact/>
                         <Footer color="light"/>

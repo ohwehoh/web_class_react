@@ -71,7 +71,7 @@
                 "link" : "https://webzz.tistory.com/231",
                 "Definition" : [
                     "<acronym> 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.",
-                    "<acronym>는 HTML4 태그이고, HTML5에서 지원되지 않는 오래된 태그입니다. 일부 브라우저에서 작동 될 수 있지만 사용을 권장하지 않습니다"
+                    "<acronym>는 HTML4 태그이고, HTML5에서 지원되지 않는 오래된 태그입니다. 일부 브라우저에서 작동 될 수 있지만 사용을 권장하지 않습니다."
                 ],
                 "Accessibility" : [],
                 "mdn" : "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/acronym",

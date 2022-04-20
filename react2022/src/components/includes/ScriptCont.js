@@ -52,9 +52,9 @@ function ScriptCont() {
     <section className="script__cont">
       <div className="container">
         <div className="script__inner">
-          {scriptData.map((txt) => (
+          {scriptData.map((txt,i) => (
             <ScriptInfo 
-              key = {txt.image}
+              key = {i}
               image = {txt.image}
               alt = {txt.alt}
               title = {txt.title}

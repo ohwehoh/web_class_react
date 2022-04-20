@@ -17,8 +17,8 @@ function MainCont(){
     return(
         <section className="main__cont">
             <div className="main__inner">
-                    {mainText.map((txt) => (
-                        <MainInfo text={txt.text} key={txt.text}/>
+                    {mainText.map((txt,i) => (
+                        <MainInfo text={txt.text} key={i}/>
                     ))}
             </div>
         </section>

@@ -40,7 +40,7 @@ function AboutCont() {
           {aboutText.map((txt,i) => (
             <AboutInfo 
               index = {i}
-              key = {txt.title}
+              key = {i}
               title = {txt.title}
               desc = {txt.desc}
               image = {txt.image}
