@@ -28,10 +28,6 @@ class Youtube extends React.Component {
     }
 
     mainAnimation = () => {
-        gsap.set(".main__inner", {opacity: 0})
-    }
-
-    getSite = () => {
         setTimeout(()=>{
             gsap.to("#header", {
                 duration: 0.8,
@@ -65,17 +61,20 @@ class Youtube extends React.Component {
                 delay: 1.6,
                 ease: "slow(0.7, 0.7, false)"
             });
-        }, 500)
+        }, 10)
+    }
+
+    getSite = () => {
+        setTimeout(() => {
+            this.setState({isLoading:false});
+            this.mainAnimation();
+        }, 1600)
     }
 
     componentDidMount(){
+        document.querySelector("body").style.background = "#f0eeeb";
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
-            document.querySelector("body").style.background = "#f0eeeb";
-        }, 1000)
-        setTimeout(() => {
-            this.setState({isLoading:false});
-            // this.mainAnimation();...로딩이 다 안돼서 .main__inner를 불러오지 못한다.
             this.getSite();
         }, 3000)
     }
@@ -92,8 +91,8 @@ class Youtube extends React.Component {
                         <Contents color="light">
                             <ContTitle title={["coding","youtuber"]} color="light"/>
                             <YoutubeCont />
+                            <Contact />
                         </Contents>
-                        <Contact />
                         <Footer color="light"/>
                     </>
                 )}

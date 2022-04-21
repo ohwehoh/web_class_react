@@ -72,8 +72,10 @@ class Reference extends React.Component{
             },
         } = await axios.get("https://ohwehoh.github.io/web_class_react/react2022/src/assets/json/reference.json");
 
-        this.setState({refers:refer, isLoading:false});
-        this.mainAnimation();
+        setTimeout(() => {
+            this.setState({refers:refer, isLoading:false});
+            this.mainAnimation();
+        }, 1600)
         console.log(refer);
     }
 
@@ -90,9 +92,9 @@ class Reference extends React.Component{
     // }
 
     componentDidMount(){
+        document.querySelector("body").style.background = "#F0EEEB";
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
-            document.querySelector("body").style.background = "#F0EEEB";
             this.getSite();
         }, 2000);
     }
@@ -111,8 +113,8 @@ class Reference extends React.Component{
                         <Contents color="light">
                             <ContTitle title={["reference","book"]} color="light"/>
                             <ReferenceCont refer={refers} />
+                            <Contact/>
                         </Contents>
-                        <Contact/>
                         <Footer color="light"/>
                     </>
                 )}
